@@ -1,0 +1,22 @@
+def parse_fasta(fasta_file):
+    sequences = {}
+    with open(fasta_file, 'r') as file:
+        sequence_id = ""
+        sequence_data = ""
+        for line in file:
+            line = line.strip()
+            if line.startswith(">"):
+                if sequence_id:
+                    sequences[sequence_id] = sequence_data
+                sequence_id = line[1:]
+                sequence_data = ""
+            else:
+                sequence_data += line
+        if sequence_id:
+            sequences[sequence_id] = sequence_data
+    return sequences
+
+fasta_file = "example.fasta"
+sequences = parse_fasta(fasta_file)
+for seq_id, seq in sequences.items():
+    print(f">{seq_id}\n{seq}")
