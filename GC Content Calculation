@@ -1,0 +1,6 @@
+def gc_content(sequence):
+    gc_count = sequence.count('G') + sequence.count('C')
+    return (gc_count / len(sequence)) * 100
+
+sequence = "ATGCGCGATCGATCGATCGATCGC"
+print(f"GC Content: {gc_content(sequence):.2f}%")
