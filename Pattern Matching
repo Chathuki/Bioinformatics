@@ -1,0 +1,10 @@
+def find_motif(dna_sequence, motif):
+    positions = []
+    for i in range(len(dna_sequence) - len(motif) + 1):
+        if dna_sequence[i:i+len(motif)] == motif:
+            positions.append(i + 1)
+    return positions
+
+dna_sequence = "ATGCGCGATCGATCGATCGATCGC"
+motif = "CGA"
+print(f"Motif positions: {find_motif(dna_sequence, motif)}")
