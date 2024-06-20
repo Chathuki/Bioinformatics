@@ -1,0 +1,11 @@
+def amino_acid_composition(protein_sequence):
+    composition = {}
+    for aa in protein_sequence:
+        if aa in composition:
+            composition[aa] += 1
+        else:
+            composition[aa] = 1
+    return composition
+
+protein_sequence = "MKVYAPVIKKAILK"
+print(f"Amino Acid Composition: {amino_acid_composition(protein_sequence)}")
