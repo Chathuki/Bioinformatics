@@ -1,0 +1,6 @@
+def reverse_complement(sequence):
+    complement = {'A': 'T', 'T': 'A', 'G': 'C', 'C': 'G'}
+    return ''.join(complement[base] for base in reversed(sequence))
+
+sequence = "ATGCGCGATCGATCGATCGATCGC"
+print(f"Reverse Complement: {reverse_complement(sequence)}")
